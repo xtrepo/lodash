@@ -4,23 +4,21 @@ import baseFlatten from './_baseFlatten.js';
 import baseIteratee from './_baseIteratee.js';
 import baseUnary from './_baseUnary.js';
 import isArray from './isArray.js';
-import isFlattenableIteratee from './_isFlattenableIteratee.js';
 import rest from './rest.js';
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeMin = Math.min;
 
 /**
- * Creates a function that invokes `func` with arguments transformed by
- * corresponding `transforms`.
+ * Creates a function that invokes `func` with its arguments transformed.
  *
  * @static
  * @since 4.0.0
  * @memberOf _
  * @category Function
  * @param {Function} func The function to wrap.
- * @param {...(Array|Array[]|Function|Function[]|Object|Object[]|string|string[])}
- *  [transforms[_.identity]] The functions to transform.
+ * @param {...(Function|Function[])} [transforms=[_.identity]]
+ *  The argument transforms.
  * @returns {Function} Returns the new function.
  * @example
  *
@@ -45,7 +43,7 @@ var nativeMin = Math.min;
 var overArgs = rest(function(func, transforms) {
   transforms = (transforms.length == 1 && isArray(transforms[0]))
     ? arrayMap(transforms[0], baseUnary(baseIteratee))
-    : arrayMap(baseFlatten(transforms, 1, isFlattenableIteratee), baseUnary(baseIteratee));
+    : arrayMap(baseFlatten(transforms, 1), baseUnary(baseIteratee));
 
   var funcsLength = transforms.length;
   return rest(function(args) {

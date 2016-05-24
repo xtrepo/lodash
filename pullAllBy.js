@@ -14,7 +14,7 @@ import basePullAll from './_basePullAll.js';
  * @category Array
  * @param {Array} array The array to modify.
  * @param {Array} values The values to remove.
- * @param {Array|Function|Object|string} [iteratee=_.identity]
+ * @param {Function} [iteratee=_.identity]
  *  The iteratee invoked per element.
  * @returns {Array} Returns `array`.
  * @example

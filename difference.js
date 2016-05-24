@@ -4,8 +4,8 @@ import isArrayLikeObject from './isArrayLikeObject.js';
 import rest from './rest.js';
 
 /**
- * Creates an array of unique `array` values not included in the other given
- * arrays using [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
+ * Creates an array of `array` values not included in the other given arrays
+ * using [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
  * for equality comparisons. The order of result values is determined by the
  * order they occur in the first array.
  *

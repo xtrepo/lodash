@@ -4,7 +4,6 @@ import baseFlatten from './_baseFlatten.js';
 import baseIteratee from './_baseIteratee.js';
 import baseUnary from './_baseUnary.js';
 import isArray from './isArray.js';
-import isFlattenableIteratee from './_isFlattenableIteratee.js';
 import rest from './rest.js';
 
 /**
@@ -18,7 +17,7 @@ function createOver(arrayFunc) {
   return rest(function(iteratees) {
     iteratees = (iteratees.length == 1 && isArray(iteratees[0]))
       ? arrayMap(iteratees[0], baseUnary(baseIteratee))
-      : arrayMap(baseFlatten(iteratees, 1, isFlattenableIteratee), baseUnary(baseIteratee));
+      : arrayMap(baseFlatten(iteratees, 1), baseUnary(baseIteratee));
 
     return rest(function(args) {
       var thisArg = this;

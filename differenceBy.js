@@ -17,8 +17,7 @@ import rest from './rest.js';
  * @category Array
  * @param {Array} array The array to inspect.
  * @param {...Array} [values] The values to exclude.
- * @param {Array|Function|Object|string} [iteratee=_.identity]
- *  The iteratee invoked per element.
+ * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
  * @returns {Array} Returns the new array of filtered values.
  * @example
  *

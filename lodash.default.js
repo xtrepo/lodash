@@ -27,7 +27,7 @@ import baseForOwn from './_baseForOwn.js';
 import baseFunctions from './_baseFunctions.js';
 import baseInvoke from './_baseInvoke.js';
 import baseIteratee from './_baseIteratee.js';
-import createHybridWrapper from './_createHybridWrapper.js';
+import createHybrid from './_createHybrid.js';
 import identity from './identity.js';
 import isArray from './isArray.js';
 import isObject from './isObject.js';
@@ -44,9 +44,9 @@ import toInteger from './toInteger.js';
 import lodash from './wrapperLodash.js';
 
 /** Used as the semantic version number. */
-var VERSION = '4.13.1';
+var VERSION = '4.14.0';
 
-/** Used to compose bitmasks for wrapper metadata. */
+/** Used to compose bitmasks for function metadata. */
 var BIND_KEY_FLAG = 2;
 
 /** Used to indicate the type of lazy iteratees. */
@@ -95,7 +95,7 @@ lodash.assign = object.assign;
 lodash.assignIn = object.assignIn;
 lodash.assignInWith = object.assignInWith;
 lodash.assignWith = object.assignWith;
-lodash.at = collection.at;
+lodash.at = object.at;
 lodash.before = func.before;
 lodash.bind = func.bind;
 lodash.bindAll = util.bindAll;
@@ -259,7 +259,9 @@ lodash.clone = lang.clone;
 lodash.cloneDeep = lang.cloneDeep;
 lodash.cloneDeepWith = lang.cloneDeepWith;
 lodash.cloneWith = lang.cloneWith;
+lodash.conformsTo = lang.conformsTo;
 lodash.deburr = string.deburr;
+lodash.defaultTo = util.defaultTo;
 lodash.divide = math.divide;
 lodash.endsWith = string.endsWith;
 lodash.eq = lang.eq;
@@ -614,7 +616,7 @@ baseForOwn(LazyWrapper.prototype, function(func, methodName) {
   }
 });
 
-realNames[createHybridWrapper(undefined, BIND_KEY_FLAG).name] = [{
+realNames[createHybrid(undefined, BIND_KEY_FLAG).name] = [{
   'name': 'wrapper',
   'func': undefined
 }];
