@@ -1,9 +1,9 @@
-var createWrapper = require('./_createWrapper'),
+var createWrap = require('./_createWrap'),
     getHolder = require('./_getHolder'),
     replaceHolders = require('./_replaceHolders'),
     rest = require('./rest');
 
-/** Used to compose bitmasks for wrapper metadata. */
+/** Used to compose bitmasks for function metadata. */
 var PARTIAL_RIGHT_FLAG = 64;
 
 /**
@@ -25,9 +25,9 @@ var PARTIAL_RIGHT_FLAG = 64;
  * @returns {Function} Returns the new partially applied function.
  * @example
  *
- * var greet = function(greeting, name) {
+ * function greet(greeting, name) {
  *   return greeting + ' ' + name;
- * };
+ * }
  *
  * var greetFred = _.partialRight(greet, 'fred');
  * greetFred('hi');
@@ -40,7 +40,7 @@ var PARTIAL_RIGHT_FLAG = 64;
  */
 var partialRight = rest(function(func, partials) {
   var holders = replaceHolders(partials, getHolder(partialRight));
-  return createWrapper(func, PARTIAL_RIGHT_FLAG, undefined, partials, holders);
+  return createWrap(func, PARTIAL_RIGHT_FLAG, undefined, partials, holders);
 });
 
 // Assign default placeholders.

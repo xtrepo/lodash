@@ -1,7 +1,5 @@
-var checkGlobal = require('./_checkGlobal');
-
-/** Detect free variable `global` from Node.js. */
-var freeGlobal = checkGlobal(typeof global == 'object' && global);
+var checkGlobal = require('./_checkGlobal'),
+    freeGlobal = require('./_freeGlobal');
 
 /** Detect free variable `self`. */
 var freeSelf = checkGlobal(typeof self == 'object' && self);

@@ -1,7 +1,5 @@
 var baseFlatten = require('./_baseFlatten'),
     baseOrderBy = require('./_baseOrderBy'),
-    isArray = require('./isArray'),
-    isFlattenableIteratee = require('./_isFlattenableIteratee'),
     isIterateeCall = require('./_isIterateeCall'),
     rest = require('./rest');
 
@@ -16,8 +14,8 @@ var baseFlatten = require('./_baseFlatten'),
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
- * @param {...(Array|Array[]|Function|Function[]|Object|Object[]|string|string[])}
- *  [iteratees=[_.identity]] The iteratees to sort by.
+ * @param {...(Function|Function[])} [iteratees=[_.identity]]
+ *  The iteratees to sort by.
  * @returns {Array} Returns the new sorted array.
  * @example
  *
@@ -49,11 +47,7 @@ var sortBy = rest(function(collection, iteratees) {
   } else if (length > 2 && isIterateeCall(iteratees[0], iteratees[1], iteratees[2])) {
     iteratees = [iteratees[0]];
   }
-  iteratees = (iteratees.length == 1 && isArray(iteratees[0]))
-    ? iteratees[0]
-    : baseFlatten(iteratees, 1, isFlattenableIteratee);
-
-  return baseOrderBy(collection, iteratees, []);
+  return baseOrderBy(collection, baseFlatten(iteratees, 1), []);
 });
 
 module.exports = sortBy;

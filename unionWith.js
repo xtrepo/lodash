@@ -6,7 +6,8 @@ var baseFlatten = require('./_baseFlatten'),
 
 /**
  * This method is like `_.union` except that it accepts `comparator` which
- * is invoked to compare elements of `arrays`. The comparator is invoked
+ * is invoked to compare elements of `arrays`. Result values are chosen from
+ * the first array in which the value occurs. The comparator is invoked
  * with two arguments: (arrVal, othVal).
  *
  * @static

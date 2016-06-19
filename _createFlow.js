@@ -12,7 +12,7 @@ var LARGE_ARRAY_SIZE = 200;
 /** Used as the `TypeError` message for "Functions" methods. */
 var FUNC_ERROR_TEXT = 'Expected a function';
 
-/** Used to compose bitmasks for wrapper metadata. */
+/** Used to compose bitmasks for function metadata. */
 var CURRY_FLAG = 8,
     PARTIAL_FLAG = 32,
     ARY_FLAG = 128,

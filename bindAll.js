@@ -21,13 +21,13 @@ var arrayEach = require('./_arrayEach'),
  *
  * var view = {
  *   'label': 'docs',
- *   'onClick': function() {
+ *   'click': function() {
  *     console.log('clicked ' + this.label);
  *   }
  * };
  *
- * _.bindAll(view, ['onClick']);
- * jQuery(element).on('click', view.onClick);
+ * _.bindAll(view, ['click']);
+ * jQuery(element).on('click', view.click);
  * // => Logs 'clicked docs' when clicked.
  */
 var bindAll = rest(function(object, methodNames) {

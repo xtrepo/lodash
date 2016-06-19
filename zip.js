@@ -14,8 +14,8 @@ var rest = require('./rest'),
  * @returns {Array} Returns the new array of grouped elements.
  * @example
  *
- * _.zip(['fred', 'barney'], [30, 40], [true, false]);
- * // => [['fred', 30, true], ['barney', 40, false]]
+ * _.zip(['a', 'b'], [1, 2], [true, false]);
+ * // => [['a', 1, true], ['b', 2, false]]
  */
 var zip = rest(unzip);
 

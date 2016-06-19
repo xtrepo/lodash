@@ -16,7 +16,7 @@ var arrayFilter = require('./_arrayFilter'),
  * @since 4.0.0
  * @category Array
  * @param {...Array} [arrays] The arrays to inspect.
- * @param {Array|Function|Object|string} [iteratee=_.identity]
+ * @param {Function} [iteratee=_.identity]
  *  The iteratee invoked per element.
  * @returns {Array} Returns the new array of filtered values.
  * @example

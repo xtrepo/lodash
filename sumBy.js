@@ -11,8 +11,7 @@ var baseIteratee = require('./_baseIteratee'),
  * @since 4.0.0
  * @category Math
  * @param {Array} array The array to iterate over.
- * @param {Array|Function|Object|string} [iteratee=_.identity]
- *  The iteratee invoked per element.
+ * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
  * @returns {number} Returns the sum.
  * @example
  *

@@ -19,9 +19,8 @@ var apply = require('./_apply'),
  * @see _.defaults
  * @example
  *
- * _.defaultsDeep({ 'user': { 'name': 'barney' } }, { 'user': { 'name': 'fred', 'age': 36 } });
- * // => { 'user': { 'name': 'barney', 'age': 36 } }
- *
+ * _.defaultsDeep({ 'a': { 'b': 2 } }, { 'a': { 'b': 1, 'c': 3 } });
+ * // => { 'a': { 'b': 2, 'c': 3 } }
  */
 var defaultsDeep = rest(function(args) {
   args.push(undefined, mergeDefaults);

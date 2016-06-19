@@ -10,8 +10,7 @@ var baseIteratee = require('./_baseIteratee'),
  * @since 4.0.0
  * @category Object
  * @param {Object} object The source object.
- * @param {Array|Function|Object|string} [predicate=_.identity]
- *  The function invoked per property.
+ * @param {Function} [predicate=_.identity] The function invoked per property.
  * @returns {Object} Returns the new object.
  * @example
  *
