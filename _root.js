@@ -1,7 +1,4 @@
-define(['./_checkGlobal'], function(checkGlobal) {
-
-  /** Detect free variable `global` from Node.js. */
-  var freeGlobal = checkGlobal(typeof global == 'object' && global);
+define(['./_checkGlobal', './_freeGlobal'], function(checkGlobal, freeGlobal) {
 
   /** Detect free variable `self`. */
   var freeSelf = checkGlobal(typeof self == 'object' && self);

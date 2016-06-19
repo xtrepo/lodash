@@ -1,9 +1,9 @@
-define(['./_baseFlatten', './_createWrapper', './rest'], function(baseFlatten, createWrapper, rest) {
+define(['./_baseFlatten', './_createWrap', './rest'], function(baseFlatten, createWrap, rest) {
 
   /** Used as a safe reference for `undefined` in pre-ES5 environments. */
   var undefined;
 
-  /** Used to compose bitmasks for wrapper metadata. */
+  /** Used to compose bitmasks for function metadata. */
   var REARG_FLAG = 256;
 
   /**
@@ -29,7 +29,7 @@ define(['./_baseFlatten', './_createWrapper', './rest'], function(baseFlatten, c
    * // => ['a', 'b', 'c']
    */
   var rearg = rest(function(func, indexes) {
-    return createWrapper(func, REARG_FLAG, undefined, undefined, undefined, baseFlatten(indexes, 1));
+    return createWrap(func, REARG_FLAG, undefined, undefined, undefined, baseFlatten(indexes, 1));
   });
 
   return rearg;

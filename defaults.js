@@ -21,8 +21,8 @@ define(['./_apply', './_assignInDefaults', './assignInWith', './rest'], function
    * @see _.defaultsDeep
    * @example
    *
-   * _.defaults({ 'user': 'barney' }, { 'age': 36 }, { 'user': 'fred' });
-   * // => { 'user': 'barney', 'age': 36 }
+   * _.defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 });
+   * // => { 'a': 1, 'b': 2 }
    */
   var defaults = rest(function(args) {
     args.push(undefined, assignInDefaults);

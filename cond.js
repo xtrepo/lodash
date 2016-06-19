@@ -20,7 +20,7 @@ define(['./_apply', './_arrayMap', './_baseIteratee', './rest'], function(apply,
    * var func = _.cond([
    *   [_.matches({ 'a': 1 }),           _.constant('matches A')],
    *   [_.conforms({ 'b': _.isNumber }), _.constant('matches B')],
-   *   [_.constant(true),                _.constant('no match')]
+   *   [_.stubTrue,                      _.constant('no match')]
    * ]);
    *
    * func({ 'a': 1, 'b': 2 });

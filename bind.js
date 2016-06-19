@@ -1,6 +1,6 @@
-define(['./_createWrapper', './_getHolder', './_replaceHolders', './rest'], function(createWrapper, getHolder, replaceHolders, rest) {
+define(['./_createWrap', './_getHolder', './_replaceHolders', './rest'], function(createWrap, getHolder, replaceHolders, rest) {
 
-  /** Used to compose bitmasks for wrapper metadata. */
+  /** Used to compose bitmasks for function metadata. */
   var BIND_FLAG = 1,
       PARTIAL_FLAG = 32;
 
@@ -24,9 +24,9 @@ define(['./_createWrapper', './_getHolder', './_replaceHolders', './rest'], func
    * @returns {Function} Returns the new bound function.
    * @example
    *
-   * var greet = function(greeting, punctuation) {
+   * function greet(greeting, punctuation) {
    *   return greeting + ' ' + this.user + punctuation;
-   * };
+   * }
    *
    * var object = { 'user': 'fred' };
    *
@@ -45,7 +45,7 @@ define(['./_createWrapper', './_getHolder', './_replaceHolders', './rest'], func
       var holders = replaceHolders(partials, getHolder(bind));
       bitmask |= PARTIAL_FLAG;
     }
-    return createWrapper(func, bitmask, thisArg, partials, holders);
+    return createWrap(func, bitmask, thisArg, partials, holders);
   });
 
   // Assign default placeholders.
